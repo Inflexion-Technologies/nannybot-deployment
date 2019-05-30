@@ -20,5 +20,3 @@ resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
-images:
-  tag: 69e00e8865ab1587fdda2175b5b167f1f3e8f314
