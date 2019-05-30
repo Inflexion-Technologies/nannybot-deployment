@@ -30,16 +30,16 @@ spec:
               value: "{{ .Values.slackToken }}"
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 3124
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /healthz
+              port: 3124
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /healthz
+              port: 3124
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
