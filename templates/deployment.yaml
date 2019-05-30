@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ include "nannybot-deployment.fullname" . }}
+  name: {{ include "nannybot.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "nannybot-deployment.name" . }}
-    helm.sh/chart: {{ include "nannybot-deployment.chart" . }}
+    app.kubernetes.io/name: {{ include "nannybot.name" . }}
+    helm.sh/chart: {{ include "nannybot.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "nannybot-deployment.name" . }}
+      app.kubernetes.io/name: {{ include "nannybot.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "nannybot-deployment.name" . }}
+        app.kubernetes.io/name: {{ include "nannybot.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:

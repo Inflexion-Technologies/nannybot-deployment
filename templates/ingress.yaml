@@ -1,13 +1,13 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "nannybot-deployment.fullname" . -}}
+{{- $fullName := include "nannybot.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "nannybot-deployment.name" . }}
-    helm.sh/chart: {{ include "nannybot-deployment.chart" . }}
+    app.kubernetes.io/name: {{ include "nannybot.name" . }}
+    helm.sh/chart: {{ include "nannybot.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- with .Values.ingress.annotations }}
