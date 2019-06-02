@@ -2,7 +2,7 @@ slackToken: ""
 replicaCount: 1
 image:
   repository: gcr.io/ic-cloud/nannybot
-  tag: 2ca18c92eb5790d2c1224c5e087f525a0353d250
+  tag: 999a0bc361edf03c32acfe50402049ee21ce5f78
   pullPolicy: Always
 nameOverride: ""
 fullnameOverride: ""
